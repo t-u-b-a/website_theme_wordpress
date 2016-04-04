@@ -1,6 +1,6 @@
 # website_theme_wordpress
 
-Based on Wordpress Optimizer theme
+Process selected Wordpress theme for Tuba website
 
 1. Edit files in /source
 2. Run gulp to optimize files
