@@ -6,8 +6,7 @@ var config = {
     output: './dist',
     less: ['reset.less', 'main.less'],
     js: ['tuba.js'],
-    devTasks: ['init', 'css', 'js', 'handlebars'],
-    prodTasks: ['init', 'css-prod', 'js-prod', 'handlebars', 'html'],
+    prodTasks: ['init', 'css-prod', 'js-prod', 'images', 'handlebars', 'html'],
     fileNames: {
         css: 'tuba_' + version + '.css',
         js: 'tuba_' + version + '.js'
@@ -43,25 +42,6 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./assets/images'));
 });
 
-gulp.task('css', function() {
-    var filename = 'style.css';
-    var appendPath = function (files) {
-        var prefix = config.source + '/less/';
-        var result = [];
-        var i;
-        for (i = 0; i < files.length; i += 1) {
-            result.push(prefix + files[i]);
-        }
-        return result;
-    };
-    var lessFiles = appendPath(config.less);
-    return gulp.src(lessFiles)
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
-    }))
-    .pipe(concat(filename))
-    .pipe(gulp.dest(config.output));
-});
 gulp.task('css-prod', function() {
     var filename = 'style.css';
     var appendPath = function (files) {
@@ -88,22 +68,6 @@ gulp.task('css-prod', function() {
     .pipe(gulp.dest(config.output));
 });
 
-gulp.task('js', function () {
-    var filename = 'tuba_' + version + '.js';
-    var appendPath = function (files) {
-        var prefix = config.source + '/js/';
-        var result = [];
-        var i;
-        for (i = 0; i < files.length; i += 1) {
-            result.push(prefix + files[i]);
-        }
-        return result;
-    };
-    var jsFiles = appendPath(config.js);
-    return gulp.src(jsFiles)
-    .pipe(concat(filename))
-    .pipe(gulp.dest(config.output));
-});
 gulp.task('js-prod', function () {
     var filename = 'tuba_' + version + '.js';
     var appendPath = function (files) {
@@ -122,12 +86,17 @@ gulp.task('js-prod', function () {
     .pipe(gulp.dest(config.output));
 });
 
+gulp.task('images', function() {
+    return gulp.src(config.source + '/images/**/*')
+    .pipe(gulp.dest(config.output + '/images'));
+});
+
 gulp.task('handlebars', function () {
     var options = {
         ignorePartials: true,
         batch : [config.source + '/partials']
     };
-    return gulp.src(config.source + '**/*.php')
+    return gulp.src(config.source + '/*.php')
     .pipe(handlebars({}, options))
     .pipe(gulp.dest(config.output));
 });
@@ -137,10 +106,9 @@ gulp.task('html', function () {
         collapseWhitespace: true,
         keepClosingSlash: true
     };
-    return gulp.src(config.output + '/**/*.php')
+    return gulp.src(config.output + '/*.php')
     .pipe(minifyHTML(optsHtml))
     .pipe(gulp.dest(config.output));
 });
 
-gulp.task('build-dev', config.devTasks);
 gulp.task('build', config.prodTasks, function (done) {return done()});
