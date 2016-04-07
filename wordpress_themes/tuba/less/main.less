@@ -162,8 +162,9 @@
     .hero {
         position: relative;
         margin: 0 0 20px 0;
-        .img,
-        .video {
+        overflow: hidden;
+        .img {
+            margin: 0 auto;
             width: 100%;
         }
         .title-wrap {
@@ -176,7 +177,7 @@
         }
         .title {
             margin: 0;
-            padding: 25% 0 0 0;
+            padding: 200px 0 0 0;
             text-align: center;
             font-size: 48px;
             text-shadow: 0 0 8px #555;
@@ -215,5 +216,52 @@
     .text {
         font-size: 12px;
         color: #fff;
+    }
+}
+
+//Desktop
+@media only screen and (min-width : 737px) {
+    .body .hero {
+        height: 520px;
+        .img {
+            background: url('./images/stage.jpg') no-repeat center;
+            max-width: 1600px;
+            height: 120%;
+            // 1600 x 859
+        }
+    }
+}
+// cellphone
+@media only screen and (max-width : 736px) {
+    @logoRatio: 0.19;
+    @logoW: @logoWidth * @logoRatio;
+    @logoH: @logoHeight * @logoRatio;
+    .header {
+        .nav {
+            width: 100%;
+            .ul {
+                .menu-item a {
+                    font-size: 14px;
+                    letter-spacing: -0.3px;
+                }
+            }
+        }
+        .logo-wrap {
+            width: @logoW;
+            .logo {
+                background-size: @logoW @logoH;
+                height: @logoH;
+                top: 11px;
+            }
+        }
+    }
+
+    .body .hero {
+        height: 240px;
+        .img {
+            background: url('./images/stage.jpg') no-repeat center;
+            max-width: 736px;
+            height: 120%;
+        }
     }
 }

@@ -3,14 +3,10 @@
 var version = require('./package.json').version;
 var config = {
     source: './wordpress_themes/tuba',
-    output: './dist',
+    output: '/Applications/MAMP/htdocs/tuba/wp-content/themes/tuba',
     less: ['normalize.less', 'main.less'],
     js: ['tuba.js'],
-    prodTasks: ['init', 'css-prod', 'js-prod', 'images', 'handlebars', 'html'],
-    fileNames: {
-        css: 'tuba_' + version + '.css',
-        js: 'tuba_' + version + '.js'
-    }
+    tasks: ['init', 'css', 'js', 'images', 'html']
 };
 
 var clean = require('gulp-clean');
@@ -42,7 +38,7 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./assets/images'));
 });
 
-gulp.task('css-prod', function() {
+gulp.task('css', function() {
     var filename = 'style.css';
     var appendPath = function (files) {
         var prefix = config.source + '/less/';
@@ -68,7 +64,7 @@ gulp.task('css-prod', function() {
     .pipe(gulp.dest(config.output));
 });
 
-gulp.task('js-prod', function () {
+gulp.task('js', function () {
     var filename = 'tuba_' + version + '.js';
     var appendPath = function (files) {
         var prefix = config.source + '/js/';
@@ -91,24 +87,19 @@ gulp.task('images', function() {
     .pipe(gulp.dest(config.output + '/images'));
 });
 
-gulp.task('handlebars', function () {
+gulp.task('html', function () {
     var options = {
         ignorePartials: true,
         batch : [config.source + '/partials']
     };
-    return gulp.src(config.source + '/*.php')
-    .pipe(handlebars({}, options))
-    .pipe(gulp.dest(config.output));
-});
-
-gulp.task('html', function () {
     var optsHtml = {
         collapseWhitespace: true,
         keepClosingSlash: true
     };
-    return gulp.src(config.output + '/*.php')
+    return gulp.src(config.source + '/*.php')
+    .pipe(handlebars({}, options))
     .pipe(minifyHTML(optsHtml))
     .pipe(gulp.dest(config.output));
 });
 
-gulp.task('build', config.prodTasks, function (done) {return done()});
+gulp.task('build', config.tasks);
