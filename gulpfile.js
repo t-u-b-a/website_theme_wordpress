@@ -4,7 +4,7 @@ var version = require('./package.json').version;
 var config = {
     source: './wordpress_themes/tuba',
     output: './dist',
-    less: ['reset.less', 'main.less'],
+    less: ['normalize.less', 'main.less'],
     js: ['tuba.js'],
     prodTasks: ['init', 'css-prod', 'js-prod', 'images', 'handlebars', 'html'],
     fileNames: {
