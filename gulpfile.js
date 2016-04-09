@@ -3,7 +3,8 @@
 var version = require('./package.json').version;
 var config = {
     source: './wordpress_themes/tuba',
-    output: '/Applications/MAMP/htdocs/tuba/wp-content/themes/tuba',
+    output: './dist',
+//    output: '/Applications/MAMP/htdocs/tuba/wp-content/themes/tuba',
     less: ['normalize.less', 'main.less'],
     js: ['tuba.js'],
     tasks: ['init', 'css', 'js', 'images', 'html']
