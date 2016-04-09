@@ -16,4 +16,14 @@ Wordpress Settings:
 
 3. Point frontpage to 2.1, and the rest in menu
 
-4. Install plugin: always edit in html. Set front-page edit-in-html
+4. Install plugin:
+    - always edit in html. Set front-page edit-in-html
+    - recent posts by category
+
+5. Set Menu:
+    近期活動
+    專案一覽
+    騎車Q&A
+    關於我們
+    聯絡我們
+    如何參與
