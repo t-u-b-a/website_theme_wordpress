@@ -7,12 +7,13 @@ Process selected Wordpress theme for Tuba website
 3. Copy /output files back to Wordpress
 
 Wordpress Settings:
+
 1. Create menu and specify order
 
 2. Create pages:
-    2.1 首頁
-    2.2 關於我們
-    2.3 聯絡我們
+    - 首頁
+    - 關於我們
+    - 聯絡我們
 
 3. Point frontpage to 2.1, and the rest in menu
 
@@ -21,9 +22,9 @@ Wordpress Settings:
     - recent posts by category
 
 5. Set Menu:
-    近期活動
-    專案一覽
-    騎車Q&A
-    關於我們
-    聯絡我們
-    如何參與
+    - 近期活動
+    - 專案一覽
+    - 騎車Q&A
+    - 關於我們
+    - 聯絡我們
+    - 如何參與
