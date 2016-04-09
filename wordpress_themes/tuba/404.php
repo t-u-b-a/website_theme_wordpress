@@ -5,12 +5,11 @@
         <div class="wrap">
             {{>header}}
             <div class="body Cf">
-        		<h3><?php _e('Error 404 Not Found'); ?></h3>
-        		<div class="post-content">
-        			<p><?php _e('Oops. Fail. The page cannot be found.'); ?></p>
-        			<p><?php _e('Please check your URL or use the search form below.'); ?></p>
-        			<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
-        		</div>
+                <h3><?php _e('Error 404 Not Found'); ?></h3>
+                <div class="post-content">
+                    <p><?php _e('Oops. Fail. The page cannot be found.'); ?></p>
+                    <p><?php _e('Please check your URL or use the search form below.'); ?></p>
+                </div>
             </div>
             {{>footer}}
         </div>
