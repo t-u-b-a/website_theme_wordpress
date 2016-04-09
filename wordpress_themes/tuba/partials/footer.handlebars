@@ -1,0 +1,19 @@
+<div class="footer">
+    <div class="nav">
+        <ul class="ul">
+            <li class="li">
+                <form role="search" method="get" class="searchform" action="<?php bloginfo('url'); ?>">
+                    <label class="screen-reader-text" for="s"><span class="notxt">搜尋:</span></label>
+                    <input type="text" value="" name="s" id="s" />
+                </form>
+            </li>
+            <li class="li">
+                <a href="<?php bloginfo('url'); ?>/feed">RSS</a>
+            </li>
+            <li class="li"><?php wp_loginout(); ?></li>
+        </ul>
+    </div>
+    <div class="text">
+        <?php echo date("Y") ?> &copy; <?php bloginfo('name'); ?> <?php _e('All Rights Reserved.'); ?>
+    </div>
+</div>
