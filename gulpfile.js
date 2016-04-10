@@ -7,7 +7,7 @@ var config = {
 //    output: '/Applications/MAMP/htdocs/tuba/wp-content/themes/tuba',
     less: ['normalize.less', 'main.less'],
     js: ['tuba.js'],
-    tasks: ['init', 'css', 'js', 'images', 'html']
+    tasks: ['init', 'css', 'js', 'images', 'favicon', 'html']
 };
 
 var clean = require('gulp-clean');
@@ -32,11 +32,6 @@ gulp.task('jshint', function () {
     return gulp.src(config.js)
     .pipe(jshint())
     .pipe(jshint.reporter('default', { verbose: true }));
-});
-
-gulp.task('images', function() {
-    return gulp.src(config.source + '/images/**/*')
-    .pipe(gulp.dest('./assets/images'));
 });
 
 gulp.task('css', function() {
@@ -86,6 +81,11 @@ gulp.task('js', function () {
 gulp.task('images', function() {
     return gulp.src(config.source + '/images/**/*')
     .pipe(gulp.dest(config.output + '/images'));
+});
+
+gulp.task('favicon', function() {
+    return gulp.src(config.source + '/favicon.ico')
+    .pipe(gulp.dest(config.output));
 });
 
 gulp.task('html', function () {
