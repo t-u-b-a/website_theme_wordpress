@@ -113,11 +113,6 @@
             background: #ddd;
         }
         .ul {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
             font-size: 0;
             padding: 0;
             .menu-item {
@@ -145,6 +140,20 @@
                     }
                 }
 
+            }
+        }
+    }
+    .searchform {
+        @ht: 24px;
+        label {
+            display: none;
+        }
+        .input {
+            border: 0;
+            background: transparent;
+            .Transition(background, 0.2s, ease-in-out);
+            &:focus {
+                background: #fff;
             }
         }
     }
@@ -282,7 +291,6 @@
     }
 }
 .footer {
-    @ht: 24px;
     height: 30px;
     margin: 20px 0 0 0;
     padding: 20px;
@@ -356,20 +364,6 @@
             height: 1px;
             background: #aaa;
             margin: 0 auto 30px auto;
-        }
-    }
-    .searchform {
-        float: right;
-        .input {
-            height: @ht;
-            line-height: @ht;
-            border: 1px solid #777;
-            background: #14222e;
-            border-radius: 10px;
-            .Transition(background, 0.2s, ease-in-out);
-            &:focus {
-                background: #fff;
-            }
         }
     }
 }

@@ -20,11 +20,27 @@ Wordpress Settings:
 4. Install plugin:
     - always edit in html. Set front-page edit-in-html
     - recent posts by category
+    - Bop Search Box
 
-5. Set Menu:
-    - 近期活動
-    - 專案一覽
-    - 騎車Q&A
-    - 關於我們
-    - 聯絡我們
-    - 如何參與
+5. Set menu:
+    - Primary menu:
+        - 近期活動
+        - 專案一覽
+        - 騎車Q&A
+        - 關於我們
+        - 如何參與
+        - 搜尋
+    - Secondary menu:
+        - 專案一覽
+            - proj 1
+            - proj 2
+            ...
+        - 騎車Q&A
+            - article 1
+            - article 2
+            ...
+        - 關於我們
+            - ...
+        - 如何參與
+            - ...
+            - ...
