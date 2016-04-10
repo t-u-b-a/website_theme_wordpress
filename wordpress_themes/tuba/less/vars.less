@@ -60,7 +60,15 @@
     }
 }
 
-@pageWidth: 840px;
+.Transition(@type, @time, @ease) {
+    -webkit-transition: @type, @time, @ease;
+    -moz-transition: @type, @time, @ease;
+    -ms-transition: @type, @time, @ease;
+    -o-transition: @type, @time, @ease;
+    transition: @type, @time, @ease;
+}
+
+@pageWidth: 1000px;
 @logoBlue: #03223e;
 
 body {
@@ -71,4 +79,9 @@ body {
 }
 a {
     text-decoration: none;
+}
+button,
+input,
+select {
+	outline: none;
 }
