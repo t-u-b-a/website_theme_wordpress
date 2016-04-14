@@ -1,14 +1,14 @@
 @import "./vars.less";
 
-@logoWidth: 400px;
-@logoHeight: 229px;
-@logoRatio: 0.20;
+@logoWidth: 160px;
+@logoHeight: 92px;
+@logoRatio: 0.5;
 @logoW: @logoWidth * @logoRatio;
 @logoH: @logoHeight * @logoRatio;
 
-@titleRatio: 0.38;
-@titleWidth: 482px;
-@titleHeight: 87px;
+@titleRatio: 0.5;
+@titleWidth: 366px;
+@titleHeight: 66px;
 @titleW: @titleWidth * @titleRatio;
 @titleH: @titleHeight * @titleRatio;
 
@@ -142,43 +142,35 @@
 
             }
         }
-    }
-    .searchform {
-        @ht: 24px;
-        label {
-            display: none;
-        }
-        .input {
-            border: 0;
-            background: transparent;
-            .Transition(background, 0.2s, ease-in-out);
-            &:focus {
-                background: #fff;
-            }
-        }
-    }
-}
-.en {
-    .header {
-        .title-wrap {
-            @titleRatioEn: 0.45;
-            @titleWEn: @titleWidth * @titleRatioEn;
-            @titleHEn: @titleHeight * @titleRatioEn;
-            width: @titleWEn;
-            .title {
-                background-image: url('./images/tuba-logo-title-en1.png');
-                background-size: @titleWEn @titleHEn;
-                width: @titleWEn;
-                height: @titleHEn;
-            }
-        }
-        .nav {
-            &:after {
-                width: 724px;
-                left: 60px;
-            }
-            .ul .li .a {
-                padding: 22px 0 8px 0;
+        .search {
+            position: absolute;
+            top: 0;
+            right: 0;
+            .searchform {
+                label {
+                    display: none;
+                }
+                margin: 0 0 0 10px;
+                padding: 20px 0;
+                .input {
+                    width: 100%;
+                    text-indent: 23px;
+                    border: 0;
+                    border-radius: 5px;
+                    padding: 3px;
+                    background: transparent url('./images/search.png') no-repeat 5px;
+                    background-size: 15px 15px;
+                    .Transition(all, 0.2s, ease-in-out);
+                    &::-webkit-input-placeholder {
+                        color: @logoBlue;
+                    }
+                    &:focus {
+                        border: 1px solid #ccc;
+                    }
+                    &:focus::-webkit-input-placeholder {
+                        color: #aaa;
+                    }
+                }
             }
         }
     }
@@ -246,20 +238,9 @@
     }
 }
 
-.page {
-    .page {
-        width: 1000px;
-    }
-    &.home {
-        .page {
-            width: 700px;
-        }
-    }
-}
 .sidebar {
     vertical-align: top;
     display: inline-block;
-    width: 300px;
     font-size: 15px;
     padding: 30px 0 0 0;
     .widget-sidebar {
@@ -297,22 +278,20 @@
     background: #14222e;
     .nav {
         position: relative;
-        width: 1000px;
         margin: 0 auto;
         .ul {
             padding: 0;
             font-size: 0;
-            .menu-item {
+            li {
                 list-style: none;
                 padding: 0;
                 a {
                     .Transition(color, 0.2s, ease-in-out);
                 }
             }
-            &>.menu-item {
+            &>li {
                 vertical-align: top;
                 display: inline-block;
-                width: 20%;
                 font-size: 15px;
                 &>a {
                     display: block;
@@ -373,24 +352,96 @@
     .hero {
         height: 520px;
         .img {
-            background: url('./images/stage1.jpg') no-repeat center;
+            background: url('./images/hero.jpg') no-repeat center;
             max-width: 1600px;
             height: 900px;
         }
     }
+    .page {
+        .page {
+            width: 1000px;
+        }
+        &.home {
+            .page {
+                width: 700px;
+            }
+        }
+    }
+    .sidebar {
+        width: 300px;
+    }
+    .footer {
+        .nav {
+            width: 1000px;
+            font-size: 0;
+            .menu-footer-container {
+                vertical-align: top;
+                width: 80%;
+                display: inline-block;
+                .ul {
+                    width: 100%;
+                }
+                li {
+                    width: 25%;
+                }
+            }
+            .func {
+                width: 20%;
+                display: inline-block;
+                .ul {
+                    .li {
+                        width: 100%;
+                        margin: 0 0 5px 0;
+                    }
+                }
+            }
+        }
+        .search {
+            display: none;
+        }
+    }
+
 }
 // cellphone
 @media only screen and (max-width : 736px) {
-    @logoRatio: 0.19;
+    @logoRatio: 0.4;
     @logoW: @logoWidth * @logoRatio;
     @logoH: @logoHeight * @logoRatio;
     .header {
         .nav {
-            width: 100%;
+            &.col-6,
+            &.col-4 {
+                width: 100%;
+                .menu-item {
+                    width: 19.5%;
+                    margin: 0 0.5%;
+                    &:nth-child(2) {
+                        margin: 0 9.5% 0 0.5%;
+                    }
+                    &:nth-child(3) {
+                        margin: 0 0.5% 0 9.5%;
+                    }
+                    &:nth-child(4) {
+                        margin: 0 0.5%;
+                    }
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
             .ul {
                 .menu-item a {
                     font-size: 14px;
-                    letter-spacing: -0.3px;
+                    letter-spacing: -0.5px;
+                }
+            }
+            .search {
+                display: none;
+                .searchform {
+                    margin: 0;
+                    .input {
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -399,7 +450,7 @@
             .logo {
                 background-size: @logoW @logoH;
                 height: @logoH;
-                top: 11px;
+                top: 18px;
             }
         }
     }
@@ -417,9 +468,62 @@
             font-size: 26px;
         }
     }
+    .body {
+        width: 100%;
+    }
+    .page {
+        .page {
+            width: 100%;
+        }
+        &.home {
+            .page {
+                width: 100%;
+            }
+        }
+    }
+    .sidebar {
+        display: none;
+    }
     .footer {
+        .search {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 15px auto;
+            .input {
+                background: #fff url('./images/search.png') no-repeat 5px;
+                background-size: 15px 15px;
+                border-radius: 5px;
+                border: 1px solid #999;
+                height: 24px;
+                line-height: 28px;
+                text-indent: 28px;
+                width: 100%;
+                padding: 0;
+                &::-webkit-input-placeholder {
+                    color: @logoBlue;
+                }
+            }
+        }
         .nav {
-            display: none;
+            .ul {
+                &>li {
+                    width: 100%;
+                    margin: 0 0 10px 0;
+                }
+                .sub-menu {
+                    margin: 10px 0 0 0;
+                    li {
+                        padding: 0 0 0 15px;
+                    }
+                }
+            }
+        }
+        .copy {
+            padding: 20px 0;
+            &:before {
+                width: 90%;
+                margin: 0 auto 20px auto;
+            }
         }
     }
 }
