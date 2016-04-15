@@ -5,8 +5,8 @@
         <div class="wrap">
             {{>header}}
             <?php if (is_front_page()) : ?>
-            <div class="hero">
-                <div class="img"></div>
+            <div id="fpHero" class="hero">
+                <img src="<?php bloginfo('template_url'); ?>/images/hero.jpg" />
                 <div class="title-wrap">
                     <h2 class="title">大標題</h2>
                     <h3 class="subtitle">小標題</h3>

@@ -15,7 +15,7 @@ Wordpress Settings:
     - 關於我們
     - 聯絡我們
 
-3. Point frontpage to 2.1, and the rest in menu
+3. 指定首頁: 外觀 > 自訂 > 指定首頁頁面
 
 4. Install plugin:
     - always edit in html. Set front-page edit-in-html
