@@ -110,6 +110,15 @@
                 display: inline-block;
                 height: 26px;
                 text-align: center;
+                &.current-post-ancestor,
+                &.current-menu-item {
+                    a {
+                        &:link,
+                        &:visited {
+                            color: #1475ec;
+                        }
+                    }
+                }
                 a {
                     font-size: 17px;
                     font-weight: 400;
@@ -214,13 +223,21 @@
         position: relative;
         display: inline-block;
         padding: 20px 0 0 0;
-        font-size: 15px;
-        width: 700px;
+        font-size: 17px;
+        width: 75%;
         vertical-align: top;
         h2,
         h3 {
             color: @logoBlue;
             font-weight: 500;
+        }
+    }
+    .listing {
+        font-size: 17px;
+        &>.ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
     }
     .post-edit-link {
@@ -233,16 +250,113 @@
         border-radius: 0 0 5px 0;
         z-index: 100;
     }
+    .post {
+        font-size: 17px;
+        line-height: 25px;
+        display: inline-block;
+        width: 73%;
+        margin: 0 2% 0 0;
+        h2 {
+            color: @logoBlue;
+            font-size: 30px;
+            font-weight: 400;
+        }
+        .post-content {
+            color: #555;
+            a {
+                text-decoration: underline;
+                &:link {
+                    color: #1a6bb6;
+                }
+                &:visited {
+                    color: #5f3274;
+                }
+                &:hover {
+                    color: #11518d;
+                }
+                &:active {
+                    color: #000;
+                }
+            }
+        }
+        .post-li {
+            position: relative;
+            margin: 0 0 40px 0;
+            padding: 0 0 40px 0;
+            &:after {
+                display: block;
+                content: " ";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 95%;
+                height: 1px;
+                background: #cecece;
+            }
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+            h3 {
+                margin: 0 0 30px 0;
+                font-weight: 400;
+                font-size: 32px;
+                a {
+                    .Transition(color, 0.2s, ease-in-out);
+                    &:link,
+                    &:visited {
+                        color: @logoBlue;
+                    }
+                    &:hover {
+                        color: #fc913a;
+                    }
+                    &:active {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+    .post-categories {
+        position: relative;
+        list-style: none;
+        margin: 30px 0 0 0;
+        padding: 10px 0 0 0;
+        font-size: 15px;
+        &:before {
+            display: block;
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 95%;
+            height: 1px;
+            background: #cecece;
+        }
+        a {
+            &:link,
+            &:visited {
+                color: #555;
+            }
+            &:hover {
+                color: #777;
+            }
+            &:active {
+                color: #333;
+            }
+        }
+    }
 }
 
 .sidebar {
     vertical-align: top;
     display: inline-block;
     font-size: 15px;
-    padding: 30px 0 0 0;
     .widget-sidebar {
         margin: 0 0 20px 0;
         ul {
+            margin: 0;
             padding: 0;
             h3 {
                 color: @logoBlue;
@@ -345,6 +459,47 @@
     }
 }
 
+.home {
+    .sidebar {
+        padding: 30px 0 0 0;
+    }
+}
+.single {
+    .body {
+        margin: 40px auto 20px auto;
+    }
+}
+.category {
+    .body {
+        margin: 60px auto 20px auto;
+    }
+}
+.error404 {
+    .logo-wrap {
+        -webkit-transform: rotate(-12deg);
+        -moz-transform: rotate(-12deg);
+        transform: rotate(-12deg);
+        left: -14px;
+        top: 3px;
+        z-index: 0;
+    }
+    h2 {
+        margin: 50px 0 30px 0;
+        font-size: 60px;
+        font-family: "Courier New";
+        font-weight: 200;
+        text-align: center;
+    }
+    .post-content {
+        text-align: center;
+    }
+    .missing {
+        
+    }
+    .footer {
+        margin: 0;
+    }
+}
 //Desktop
 @media only screen and (min-width : @minWidth) {
     .header {
