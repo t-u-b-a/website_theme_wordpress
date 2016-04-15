@@ -10,7 +10,7 @@
     var getMoveRange = function () {
         var heroHeight = hero.clientHeight;
         var imgHeight = img.clientHeight;
-        return imgHeight - heroHeight;
+        return Math.max(imgHeight - heroHeight, 50);
     };
     var getMoveIndex = function () {
         var result = moveRange / scrollDistance;
