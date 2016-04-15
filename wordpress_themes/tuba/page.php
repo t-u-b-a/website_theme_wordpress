@@ -34,4 +34,7 @@
         </div>
         <?php wp_footer();?>
     </body>
+    <?php if (is_front_page()) : ?>
+    <script src="./script.js" inline></script>
+    <?php endif; ?>
 </html>

@@ -14,6 +14,7 @@ var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var gulp = require('gulp');
 var handlebars = require('gulp-compile-handlebars');
+var inlineSource = require('gulp-inline-source');
 var jshint = require('gulp-jshint');
 var jsonlint = require("gulp-jsonlint");
 var less = require('gulp-less');
@@ -102,6 +103,7 @@ gulp.task('html', function () {
     };
     return gulp.src(config.source + '/*.php')
     .pipe(handlebars({}, options))
+    .pipe(inlineSource())
     .pipe(minifyHTML(optsHtml))
     .pipe(gulp.dest(config.output));
 });
