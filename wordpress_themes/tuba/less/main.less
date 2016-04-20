@@ -218,13 +218,13 @@
 .body {
     max-width: @maxWidth;
     margin: 0 auto;
+    padding: 20px 0;
     font-size: 0;
     .page {
         position: relative;
         display: inline-block;
         padding: 20px 0 0 0;
         font-size: 17px;
-        width: 75%;
         vertical-align: top;
         h2,
         h3 {
@@ -254,8 +254,6 @@
         font-size: 17px;
         line-height: 25px;
         display: inline-block;
-        width: 73%;
-        margin: 0 2% 0 0;
         h2 {
             color: @logoBlue;
             font-size: 30px;
@@ -354,7 +352,7 @@
     display: inline-block;
     font-size: 15px;
     .widget-sidebar {
-        margin: 0 0 20px 0;
+        margin: 0 0 40px 0;
         ul {
             margin: 0;
             padding: 0;
@@ -362,11 +360,31 @@
                 color: @logoBlue;
                 font-size: 24px;
                 font-weight: 500;
-                margin: 0 0 5px 0;
+                margin: 0 0 18px 0;
+                text-align: center;
+                position: relative;
+                &:before,
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: " ";
+                    width: 27%;
+                    height: 2px;
+                    background: #000;
+                    top: 14px;
+                }
+                &:before {
+                    left: 0;
+                }
+                &:after {
+                    right: 0;
+                }
             }
             li {
                 list-style: none;
-                margin: 0 0 8px 0;
+                margin: 0 0 12px 0;
+                font-weight: 400;
+                letter-spacing: 0.3px;
                 a {
                     &:link,
                     &:visited {
@@ -378,6 +396,37 @@
                     &:active {
                         color: #333;
                     }
+                }
+            }
+        }
+    }
+    .tribe-list-widget {
+        padding: 0;
+        h4 {
+            margin: 0 0 5px 0;
+        }
+    }
+    .tribe-events-widget-link {
+        display: none;
+    }
+    .tribe-events-list-widget-events {
+        .tribe-event-duration {
+            font-size: 12px;
+            .from,
+            .to,
+            .tribe-event-time {
+                display: none;
+            }
+            &>a {
+                &:link,
+                &:visited {
+                    color: #999;
+                }
+                &:hover {
+                    color: #aaa;
+                }
+                &:active {
+                    color: #777;
                 }
             }
         }
@@ -459,6 +508,49 @@
     }
 }
 
+.tribe-events-list-event-title {
+    a {
+        .Transition(color, 0.2s, ease-in-out);
+        font-size: 30px;
+        &:link,
+        &:visited {
+            color: @logoBlue;
+        }
+        &:hover {
+            color: #fc913a;
+        }
+        &:active {
+            color: #000;
+        }
+    }
+}
+.tribe-events-loop {
+    .type-tribe_events {
+        .tribe-events-event-meta {
+            font-weight: 400;
+            color: #777;
+        }
+    }
+}
+.tribe-bar-date-filter {
+    display: none;
+}
+#tribe-events-content {
+    .tribe-events-read-more {
+        font-size: 15px;
+        .Transition(color, 0.2s, ease-in-out);
+        &:link,
+        &:visited {
+            color: @logoBlue;
+        }
+        &:hover {
+            color: #fc913a;
+        }
+        &:active {
+            color: #000;
+        }
+    }
+}
 .home {
     .sidebar {
         padding: 30px 0 0 0;
@@ -511,7 +603,12 @@
     }
     .page {
         .page {
-            width: 75%;
+            width: 100%;
+        }
+        &.home {
+            .page {
+                width: 68%;
+            }
         }
     }
     .hero {
@@ -520,8 +617,19 @@
             min-width: @minWidth;
         }
     }
+    .post-type-archive {
+        .page {
+            width: 100%;
+        }
+    }
+    .body {
+        .post {
+            width: 68%;
+            margin: 0 2% 0 0;
+        }
+    }
     .sidebar {
-        width: 25%;
+        width: 30%;
     }
     .footer {
         .nav {
@@ -620,6 +728,12 @@
     }
     .body {
         width: 100%;
+        .page {
+            width: 100%;
+        }
+        .post {
+            width: 100%;
+        }
     }
     .page {
         .page {

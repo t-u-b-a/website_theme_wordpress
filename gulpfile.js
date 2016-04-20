@@ -3,11 +3,13 @@
 var version = require('./package.json').version;
 var config = {
     source: './wordpress_themes/tuba',
+    pluginsSource: './wordpress_plugin',
 //    output: './dist',
     output: '/Applications/MAMP/htdocs/tuba/wp-content/themes/tuba',
+    pluginsOutput: '/Applications/MAMP/htdocs/tuba/wp-content/plugins',
     less: ['normalize.less', 'main.less'],
     js: ['tuba.js'],
-    tasks: ['init', 'images', 'css', 'js', 'favicon', 'html']
+    tasks: ['init', 'images', 'css', 'js', 'favicon', 'html', 'plugin']
 };
 var base64 = require('gulp-base64');
 var clean = require('gulp-clean');
@@ -106,6 +108,11 @@ gulp.task('html', function () {
     .pipe(inlineSource())
     .pipe(minifyHTML(optsHtml))
     .pipe(gulp.dest(config.output));
+});
+
+gulp.task('plugin', function () {
+    return gulp.src(config.pluginsSource + '/**/*')
+    .pipe(gulp.dest(config.pluginsOutput));
 });
 
 gulp.task('build', config.tasks);
