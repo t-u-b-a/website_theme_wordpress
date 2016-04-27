@@ -216,6 +216,21 @@
     }
 }
 .body {
+    a {
+        text-decoration: underline;
+        &:link {
+            color: #1a6bb6;
+        }
+        &:visited {
+            color: #9c5eb9;
+        }
+        &:hover {
+            color: #11518d;
+        }
+        &:active {
+            color: #000;
+        }
+    }
     max-width: @maxWidth;
     margin: 0 auto;
     padding: 20px 0;
@@ -226,10 +241,14 @@
         padding: 20px 0 0 0;
         font-size: 17px;
         vertical-align: top;
+        line-height: 34px;
         h2,
         h3 {
             color: @logoBlue;
             font-weight: 500;
+        }
+        ul {
+            padding: 0 0 0 22px;
         }
     }
     .listing {
@@ -252,8 +271,8 @@
     }
     .post {
         font-size: 17px;
-        line-height: 25px;
         display: inline-block;
+        line-height: 34px;
         h2 {
             color: @logoBlue;
             font-size: 30px;
@@ -261,21 +280,6 @@
         }
         .post-content {
             color: #555;
-            a {
-                text-decoration: underline;
-                &:link {
-                    color: #1a6bb6;
-                }
-                &:visited {
-                    color: #5f3274;
-                }
-                &:hover {
-                    color: #11518d;
-                }
-                &:active {
-                    color: #000;
-                }
-            }
         }
         .post-li {
             position: relative;
@@ -345,6 +349,11 @@
             }
         }
     }
+    .search-result {
+        font-size: 15px;
+        width: 75%;
+        margin: 0 auto;
+    }
 }
 
 .sidebar {
@@ -386,6 +395,7 @@
                 font-weight: 400;
                 letter-spacing: 0.3px;
                 a {
+                    text-decoration: none;
                     &:link,
                     &:visited {
                         color: #555;
@@ -535,9 +545,40 @@
 .tribe-bar-date-filter {
     display: none;
 }
+.single-tribe_events {
+    .page-content {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+.tribe-events-single-event-title {
+    font-size: 32px;
+}
+.tribe-events-schedule {
+    font-weight: 200;
+    color: #777;
+}
 #tribe-events-content {
     .tribe-events-read-more {
         font-size: 15px;
+        .Transition(color, 0.2s, ease-in-out);
+        &:link,
+        &:visited {
+            color: @logoBlue;
+        }
+        &:hover {
+            color: #fc913a;
+        }
+        &:active {
+            color: #000;
+        }
+    }
+}
+#tribe-events .tribe_events .tribe-events-content p {
+    line-height: 34px;
+}
+.tribe-events-sub-nav {
+    a {
         .Transition(color, 0.2s, ease-in-out);
         &:link,
         &:visited {
@@ -561,10 +602,51 @@
         margin: 40px auto 20px auto;
     }
 }
-.category {
+.category,
+.search {
     .body {
         margin: 60px auto 20px auto;
     }
+}
+.search {
+
+    h3 {
+        font-size: 34px;
+        text-align: center;
+        font-weight: 200;
+        margin: 10px 0 30px 0;
+    }
+    .post-single {
+        margin: 0 0 16px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 0 15px 5px 15px;
+        a {
+            text-decoration: none;
+            .Transition(color, 0.2s, ease-in-out);
+            &:link,
+            &:visited {
+                color: @logoBlue;
+            }
+            &:hover {
+                color: #fc913a;
+            }
+            &:active {
+
+            }
+        }
+        h4 {
+            margin: 10px 0 0 0;
+
+        }
+        p {
+            color: #4f4f4f;
+            margin: 5px 0;
+            font-size: 15px;
+        }
+
+    }
+
 }
 .error404 {
     .logo-wrap {
