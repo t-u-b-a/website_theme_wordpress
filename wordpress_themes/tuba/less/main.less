@@ -305,6 +305,7 @@
                 font-weight: 400;
                 font-size: 32px;
                 a {
+                    text-decoration: none;
                     .Transition(color, 0.2s, ease-in-out);
                     &:link,
                     &:visited {
@@ -316,6 +317,11 @@
                     &:active {
                         color: #000;
                     }
+                }
+            }
+            .post-excerpt {
+                a {
+                    text-decoration: none;
                 }
             }
         }
@@ -723,9 +729,12 @@
                 display: inline-block;
                 .ul {
                     width: 100%;
+                    &>li {
+                        width: 25%;
+                    }
                 }
                 li {
-                    width: 25%;
+                    width: 100%;
                 }
             }
             .func {
