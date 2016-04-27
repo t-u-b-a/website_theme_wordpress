@@ -21,10 +21,11 @@ Wordpress Settings:
     - always edit in html. Set front-page edit-in-html
     - recent posts by category
     - Bop Search Box
+    - the Event calendar
 
 5. Set menu:
     - Primary menu:
-        - 近期活動
+        - 近期活動 (event calendar)
         - 專案一覽
         - 騎車Q&A
         - 關於我們
@@ -44,3 +45,7 @@ Wordpress Settings:
         - 如何參與
             - ...
             - ...
+
+6. 編輯 event calendar 中文的方法
+    - 編輯 lang/the-events-calendar-zh_TW.po
+    - 在OS X上, 用Poedit輸出mo檔, 放回同一個資料夾
