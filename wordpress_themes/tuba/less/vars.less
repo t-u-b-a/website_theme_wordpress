@@ -1,39 +1,6 @@
-/** San Francisco Font */
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 100;
-  src: url("./images/fonts/sanfranciscodisplay-ultralight-webfont.woff");
-}
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 200;
-  src: url("./images/fonts/sanfranciscodisplay-thin-webfont.woff");
-}
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 400;
-  src: url("./images/fonts/sanfranciscodisplay-regular-webfont.woff");
-}
-/** Medium */
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 500;
-  src: url("./images/fonts/sanfranciscodisplay-medium-webfont.woff");
-}
-/** Semi Bold */
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 600;
-  src: url("./images/fonts/sanfranciscodisplay-semibold-webfont.woff");
-}
-/** Bold */ 
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 700;
-  src: url("./images/fonts/sanfranciscodisplay-bold-webfont.woff");
-}
 .wrap {
-    font-family: "San Francisco";
+//    font-family: "San Francisco";
+    font-family: "Helvetica Neue", "Apple LiGothic Medium", "Microsoft JhengHei", "新細明體", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 }
 // Hide element or text
 .hidden {
@@ -59,15 +26,31 @@
         clear: both;
     }
 }
+
+.Transition(@type, @time, @ease) {
+    -webkit-transition: @type, @time, @ease;
+    -moz-transition: @type, @time, @ease;
+    -ms-transition: @type, @time, @ease;
+    -o-transition: @type, @time, @ease;
+    transition: @type, @time, @ease;
+}
+
+@pageWidth: 1000px;
+@logoBlue: #03223e;
+
 body {
-    background: #03223e;
+    background: #14222e;
 }
 .wrap {
+//    background: #fdfffa;
     background: #fff;
+    color: #4f4f4f;
 }
 a {
     text-decoration: none;
 }
-
-@pageWidth: 840px;
-@logoBlue: #03223e;
+button,
+input,
+select {
+	outline: none;
+}

@@ -5,10 +5,10 @@
         <div class="wrap">
             {{>header}}
             <div class="body Cf">
-                <h3><?php _e('Error 404 Not Found'); ?></h3>
+                <h2><?php _e('[ Error 404 ]'); ?></h2>
                 <div class="post-content">
+                    <img class="missing" src="<?php bloginfo('template_url'); ?>/images/404.png" />
                     <p><?php _e('Oops. Fail. The page cannot be found.'); ?></p>
-                    <p><?php _e('Please check your URL or use the search form below.'); ?></p>
                 </div>
             </div>
             {{>footer}}

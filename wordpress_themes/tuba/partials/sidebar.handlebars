@@ -2,14 +2,14 @@
     <?php  if ( ! dynamic_sidebar( 'Sidebar' )) : ?>
     <ul class="ul">
         <li id="sidebar-nav" class="widget menu">
-            <h3><?php _e('Navigation'); ?></h3>
-            <ul>
+            <h3 class="hd"><?php _e('Navigation'); ?></h3>
+            <ul class="ul">
                 <?php wp_nav_menu( array( 'theme_location' => 'sidebar-menu' ) ); /* editable within the Wordpress backend */ ?>
             </ul>
         </li>
         <li id="sidebar-archives" class="widget">
-            <h3><?php _e('Archives') ?></h3>
-            <ul>
+            <h3 class="hd"><?php _e('Archives') ?></h3>
+            <ul class="ul">
                 <?php wp_get_archives( 'type=yearly' ); ?>
             </ul>
         </li>
