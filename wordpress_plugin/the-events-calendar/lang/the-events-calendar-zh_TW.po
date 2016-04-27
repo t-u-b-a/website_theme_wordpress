@@ -1070,7 +1070,7 @@ msgstr "僅於如果有即將來臨活動時顯示小工具："
 #: src/functions/advanced-functions/meta_registration.php:16
 #: src/views/modules/meta/details.php:55
 msgid "Details"
-msgstr "明細："
+msgstr "活動細節"
 
 #: src/functions/advanced-functions/meta_registration.php:80
 msgid "Event Tags:"
