@@ -1,4 +1,6 @@
 <?php
+
+    set_post_thumbnail_size( 680, 200, true );
 	// enables wigitized sidebars
 	if ( function_exists('register_sidebar') )
 

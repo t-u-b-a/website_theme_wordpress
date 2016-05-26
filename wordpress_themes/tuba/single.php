@@ -9,9 +9,9 @@
                     <div id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
                         <h2><?php the_title(); ?></h2>
                         <?php edit_post_link('<small>Edit this entry</small>','',''); ?>
-                        <?php if ( has_post_thumbnail() ) : ?>
+                        <?php /* if ( has_post_thumbnail() ) : ?>
                             <div class="featured-thumbnail"><?php the_post_thumbnail(); ?></div>
-                        <?php endif; ?>
+                        <?php endif; */ ?>
                         <div class="post-content">
                             <?php the_content(); ?>
                             <?php wp_link_pages('before=<div class="pagination">&after=</div>'); ?>

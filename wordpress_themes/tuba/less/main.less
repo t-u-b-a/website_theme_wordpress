@@ -248,7 +248,49 @@
             font-weight: 500;
         }
         ul {
+            margin: 15px 0 0 0;
             padding: 0 0 0 22px;
+            list-style: none;
+            padding: 0;
+            font-size: 0;
+            &>li {
+                display: inline-block;
+                width: 50%;
+                font-size: 15px;
+                img {
+                    display: block;
+                }
+                .title {
+                    display: block;
+                    margin: 0;
+                    font-size: 20px;
+                }
+                a {
+                    &:link,
+                    &:visited {
+                        text-decoration: none;
+                        color: #555;
+                    }
+                    &:hover {
+                        color: #777;
+                    }
+                    &:active {
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+    .featured-thumbnail {
+        display: inline-block;
+        margin: 0 30px 0 0;
+    }
+    .post-excerpt {
+        display: inline-block;
+        width: 600px;
+        vertical-align: top;
+        p {
+            margin: 0;
         }
     }
     .listing {
@@ -280,6 +322,10 @@
         }
         .post-content {
             color: #555;
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
         .post-li {
             position: relative;
@@ -301,9 +347,9 @@
                 }
             }
             h3 {
-                margin: 0 0 30px 0;
+                margin: 0 0 20px 0;
                 font-weight: 400;
-                font-size: 30px;
+                font-size: 24px;
                 a {
                     text-decoration: none;
                     .Transition(color, 0.2s, ease-in-out);
@@ -429,9 +475,11 @@
         .tribe-event-duration {
             font-size: 12px;
             .from,
-            .to,
-            .tribe-event-time {
+            .to {
                 display: none;
+            }
+            .tribe-event-time {
+                display: inline-block;
             }
             &>a {
                 &:link,
@@ -521,6 +569,28 @@
             background: #aaa;
             margin: 0 auto 30px auto;
         }
+    }
+    .search {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 15px auto;
+        .input {
+            background: #fff url('./images/search.png') no-repeat 5px;
+            background-size: 15px 15px;
+            border-radius: 5px;
+            border: 1px solid #999;
+            height: 24px;
+            line-height: 28px;
+            text-indent: 28px;
+            width: 100%;
+            padding: 0;
+            &::-webkit-input-placeholder {
+                color: @logoBlue;
+            }
+        }
+    }
+    &>.search {
+        display: none;
     }
 }
 
@@ -734,8 +804,8 @@
     }
     .body {
         .post {
-            width: 68%;
-            margin: 0 2% 0 0;
+            margin: 0 2%;
+            width: 96%;
         }
     }
     .sidebar {
@@ -862,30 +932,17 @@
         display: none;
     }
     .footer {
-        .search {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 15px auto;
-            .input {
-                background: #fff url('./images/search.png') no-repeat 5px;
-                background-size: 15px 15px;
-                border-radius: 5px;
-                border: 1px solid #999;
-                height: 24px;
-                line-height: 28px;
-                text-indent: 28px;
-                width: 100%;
-                padding: 0;
-                &::-webkit-input-placeholder {
-                    color: @logoBlue;
-                }
-            }
+        &>.search {
+            display: block;
         }
         .nav {
             .ul {
                 &>li {
                     width: 100%;
                     margin: 0 0 10px 0;
+                    &.search {
+                        display: none;
+                    }
                 }
                 .sub-menu {
                     margin: 10px 0 0 0;

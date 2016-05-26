@@ -8,8 +8,10 @@
             <div id="fpHero" class="hero">
                 <img src="<?php bloginfo('template_url'); ?>/images/hero.jpg" />
                 <div class="title-wrap">
-                    <h2 class="title">大標題</h2>
+                    <h2 class="title">用單車改變城市的面貌</h2>
+<?php /*
                     <h3 class="subtitle">小標題</h3>
+*/ ?>
                 </div>
             </div>
             <?php endif; ?>

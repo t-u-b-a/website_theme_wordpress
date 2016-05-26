@@ -31,7 +31,6 @@
                         <p class="newer"><?php previous_posts_link('Newer Entries &raquo;') ?></p>
                     </div>
                 </div>
-                {{>sidebar}}
             </div>
             {{>footer}}
         </div>

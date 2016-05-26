@@ -9,6 +9,18 @@
         <?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'ul') ); ?>
         <div class="func">
             <ul class="ul">
+                <li class="li search">
+                    <form role="search" method="get" class="searchform" action="<?php bloginfo('url'); ?>">
+                        <label class="screen-reader-text" for="s"><span class="notxt">搜尋:</span></label>
+                        <input type="text" value="" name="s" class="input" placeholder="搜尋"/>
+                    </form>
+                </li>
+                <li class="li">
+                    <a target="_blank" href="https://www.facebook.com/taiwanurbanbicyclealliance/">Facebook</a>
+                </li>
+                <li class="li">
+                    <a target="_blank" href="https://www.flickr.com/photos/142841064@N06/">Flickr</a>
+                </li>
                 <li class="li">
                     <a href="<?php bloginfo('url'); ?>/feed">RSS</a>
                 </li>
