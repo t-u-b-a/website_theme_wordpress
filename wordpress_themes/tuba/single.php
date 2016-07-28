@@ -17,14 +17,10 @@
                             <?php wp_link_pages('before=<div class="pagination">&after=</div>'); ?>
                         </div>
 
-                        <div id="post-meta">
-                            <p><?php the_category('') ?></p>
-                        </div>
                     </div>
                     <?php /* comments_template( '', true ); */ ?>
 
                 <?php endwhile; ?>
-                {{>sidebar}}
             </div>
             {{>footer}}
         </div>

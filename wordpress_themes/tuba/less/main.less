@@ -15,6 +15,9 @@
 @maxWidth: 1000px;
 @minWidth: 737px;
 
+.wrap {
+    min-width: 300px;
+}
 .header {
     position: relative;
     width: 100%;
@@ -287,7 +290,6 @@
     }
     .post-excerpt {
         display: inline-block;
-        width: 600px;
         vertical-align: top;
         p {
             margin: 0;
@@ -323,7 +325,7 @@
         .post-content {
             color: #555;
             img {
-                width: 100%;
+                max-width: 100%;
                 height: auto;
             }
         }
@@ -407,7 +409,16 @@
         margin: 0 auto;
     }
 }
-
+.hp-list {
+    &>li {
+        vertical-align: top;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        outline: 1px solid #ccc;
+    }
+}
 .sidebar {
     vertical-align: top;
     display: inline-block;
@@ -807,6 +818,9 @@
             margin: 0 2%;
             width: 96%;
         }
+        .post-excerpt {
+            width: 600px;
+        }
     }
     .sidebar {
         width: 30%;
@@ -854,39 +868,10 @@
     @logoH: @logoHeight * @logoRatio;
     .header {
         .nav {
-            &.col-6,
-            &.col-4 {
-                width: 100%;
-                .menu-item {
-                    width: 19.5%;
-                    margin: 0 0.5%;
-                    &:nth-child(2) {
-                        margin: 0 9.5% 0 0.5%;
-                    }
-                    &:nth-child(3) {
-                        margin: 0 0.5% 0 9.5%;
-                    }
-                    &:nth-child(4) {
-                        margin: 0 0.5%;
-                    }
-                    &:last-child {
-                        display: none;
-                    }
-                }
-            }
             .ul {
                 .menu-item a {
-                    font-size: 14px;
+                    font-size: 13px;
                     letter-spacing: -0.5px;
-                }
-            }
-            .search {
-                display: none;
-                .searchform {
-                    margin: 0;
-                    .input {
-                        font-size: 12px;
-                    }
                 }
             }
         }
@@ -900,23 +885,63 @@
         }
     }
     .hero {
-        height: 240px;
+        height: 170px;
         img {
             max-width: @minWidth;
         }
         .title {
-            padding: 80px 0 0 0;
-            font-size: 26px;
+            padding: 70px 0 0 0;
+            font-size: 20px;
         }
     }
     .body {
+        padding: 0;
         width: 100%;
         .page {
             width: 100%;
+            padding: 0;
+            ul.hp-list {
+                margin: 0;
+                li {
+                    .title {
+                        font-size: 15px;
+                    }
+                }
+            }
         }
         .post {
-            width: 100%;
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+            line-height: 28px;
+            font-size: 15px;
+            h2 {
+                font-size: 18px;
+                margin: 0 0 10px 0;
+            }
+            .post-li {
+                margin: 0 0 15px 0;
+                padding: 0 0 15px 0;
+                h3 {
+                    font-size: 16px;
+                    margin: 0 0 5px 0;
+                }
+                .featured-thumbnail {
+                    margin: 0;
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+            }
         }
+        .post-excerpt {
+            width: 100%;
+            overflow-x: hidden;
+        }
+    }
+    .hp-list {
+        font-size: 14px;
     }
     .page {
         .page {
@@ -932,6 +957,7 @@
         display: none;
     }
     .footer {
+        margin: 0;
         &>.search {
             display: block;
         }
@@ -958,6 +984,11 @@
                 width: 100%;
                 margin: 0 auto 20px auto;
             }
+        }
+    }
+    .category {
+        .body {
+            margin: 50px auto 0;
         }
     }
 }
