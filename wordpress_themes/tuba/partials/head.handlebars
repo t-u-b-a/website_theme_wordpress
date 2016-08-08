@@ -10,4 +10,9 @@
     <link rel="alternate" type="application/atom+xml" title="<?php bloginfo( 'name' ); ?>" href="<?php bloginfo( 'atom_url' ); ?>" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <?php if (is_user_logged_in()) { wp_head(); }?>
+    <meta property="og:url"                content="<?php the_permalink(); ?>" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="<?php bloginfo( 'name' ); wp_title('|'); ?>" />
+    <meta property="og:image"              content="<?php the_post_thumbnail_url('thumbnail'); ?>" />
+    <meta property="og:description"        content="" />
 </head>
