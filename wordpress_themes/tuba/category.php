@@ -14,7 +14,11 @@
                         <li class="post-li">
                             <h3><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
                             <?php if ( has_post_thumbnail() ) : ?>
-                                <div class="featured-thumbnail"><?php the_post_thumbnail(); ?></div>
+                                <div class="featured-thumbnail">
+                                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                        <?php the_post_thumbnail(); ?>
+                                    </a>
+                                </div>
                             <?php endif; ?>
                             <div class="post-excerpt">
                                 <?php the_excerpt(); ?>
