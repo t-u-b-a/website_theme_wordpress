@@ -287,6 +287,11 @@
     .featured-thumbnail {
         display: inline-block;
         margin: 0 30px 0 0;
+        &>a {
+            &>img {
+                outline: #ccc solid 1px;
+            }
+        }
     }
     .post-excerpt {
         display: inline-block;
@@ -337,6 +342,10 @@
             img {
                 max-width: 100%;
                 height: auto;
+            }
+            .fb-video {
+                width: 100%;
+                text-align: center;
             }
         }
         .post-li {
