@@ -342,6 +342,7 @@
             img {
                 max-width: 100%;
                 height: auto;
+                outline: 1px solid #eee;
             }
             .fb-video {
                 width: 100%;
@@ -431,6 +432,12 @@
 .hp-list {
     &>li {
         vertical-align: top;
+        a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
     img {
         max-width: 100%;
@@ -439,6 +446,7 @@
     }
 }
 .sidebar {
+    padding: 30px 0 0 0;
     vertical-align: top;
     display: inline-block;
     font-size: 15px;
@@ -698,11 +706,6 @@
         }
     }
 }
-.home {
-    .sidebar {
-        padding: 30px 0 0 0;
-    }
-}
 .single {
     .body {
         margin: 60px auto 20px auto;
@@ -888,6 +891,9 @@
     @logoRatio: 0.4;
     @logoW: @logoWidth * @logoRatio;
     @logoH: @logoHeight * @logoRatio;
+    @titleRatio: 0.45;
+    @titleW: @titleWidth * @titleRatio;
+    @titleH: @titleHeight * @titleRatio;
     .header {
         .nav {
             .ul {
@@ -905,6 +911,14 @@
                 top: 18px;
             }
         }
+        .title-wrap {
+            width: @titleW;
+            .title {
+                background-size: @titleW @titleH;
+                width: @titleW;
+                height: @titleH;
+            }
+        }
     }
     .hero {
         height: 170px;
@@ -914,6 +928,7 @@
         .title {
             padding: 70px 0 0 0;
             font-size: 20px;
+            font-weight: 300;
         }
     }
     .body {
@@ -956,6 +971,10 @@
                     }
                 }
             }
+            iframe {
+                max-width: 100%;
+                height: 300px;
+            }
         }
         .post-excerpt {
             width: 100%;
@@ -964,6 +983,9 @@
     }
     .hp-list {
         font-size: 14px;
+        li {
+            height: 180px;
+        }
     }
     .page {
         .page {
@@ -976,7 +998,21 @@
         }
     }
     .sidebar {
-        display: none;
+        display: block;
+        margin: 0 auto;
+        padding: 0 20px;
+        .widget-sidebar {
+            ul {
+                h3 {
+                    font-size: 20px;
+                    &:before,
+                    &:after {
+                        width: 34%;
+                        height: 1px;
+                    }
+                }
+            }
+        }
     }
     .footer {
         margin: 0;
@@ -993,7 +1029,9 @@
                     }
                 }
                 .sub-menu {
-                    margin: 10px 0 0 0;
+                    font-size: 13px;
+                    line-height: 24px;
+                    margin: 5px 0 0 0;
                     li {
                         padding: 0 0 0 15px;
                     }
