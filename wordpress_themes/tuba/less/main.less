@@ -233,6 +233,20 @@
         &:active {
             color: #000;
         }
+        &.button {
+            color: #fff;
+            background: #ff750c; /* Old browsers */
+            background: -moz-linear-gradient(top, #ff750c 0%, #f73d00 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #ff750c 0%,#f73d00 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #ff750c 0%,#f73d00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            display: block;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 4px 0;
+            border-radius: 3px;
+            text-decoration: none;
+        }
     }
     max-width: @maxWidth;
     margin: 0 auto;
@@ -427,6 +441,29 @@
         font-size: 15px;
         width: 75%;
         margin: 0 auto;
+    }
+    .pta-sus-tasks {
+        width: 100%;
+        max-width: 800px;
+        font-size: 14px;
+        .remaining {
+            width: 120px;
+            .txt {
+                font-size: 14px;
+                color: #999;
+                padding: 0 0 0 5px;
+            }
+        }
+        th,
+        td {
+            padding: 5px;
+        }
+    }
+    .pta-sus-sheets {
+        th,
+        td {
+            padding: 5px;
+        }
     }
 }
 .hp-list {
@@ -935,7 +972,8 @@
         padding: 0;
         width: 100%;
         .page {
-            width: 100%;
+            display: block;
+            width: 95%;
             padding: 0;
             ul.hp-list {
                 margin: 0;
@@ -955,6 +993,10 @@
             h2 {
                 font-size: 18px;
                 margin: 0 0 10px 0;
+            }
+            h3 {
+                font-weight: 700;
+                font-size: 15px;
             }
             .post-li {
                 margin: 0 0 15px 0;
@@ -980,6 +1022,16 @@
             width: 100%;
             overflow-x: hidden;
         }
+        .pta-sus-tasks {
+            width: 100%;
+            margin: 0 auto;
+            .remaining {
+                width: 104px;
+                .txt {
+                    font-size: 12px;
+                }
+            }
+        }
     }
     .hp-list {
         font-size: 14px;
@@ -989,7 +1041,9 @@
     }
     .page {
         .page {
-            width: 100%;
+            width: 95%;
+            margin: 0 auto;
+            display: block;
         }
         &.home {
             .page {
