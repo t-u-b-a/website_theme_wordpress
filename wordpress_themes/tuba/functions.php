@@ -7,6 +7,7 @@
 	// Sidebar Widget
 	// Location: the sidebar
 	register_sidebar(array('name'=>'Sidebar',
+        'id'=> 'sidebar-1',
 		'before_widget' => '<div class="widget-area widget-sidebar"><ul>',
 		'after_widget' => '</ul></div>',
 		'before_title' => '<h3>',
@@ -15,6 +16,7 @@
 	// Header Widget
 	// Location: right after the navigation
 	register_sidebar(array('name'=>'Header',
+        'id'=> 'sidebar-2',
 		'before_widget' => '<div class="widget-area widget-header"><ul>',
 		'after_widget' => '</ul></div>',
 		'before_title' => '<h4>',
@@ -23,6 +25,7 @@
 	// Footer Widget
 	// Location: at the top of the footer, above the copyright
 	register_sidebar(array('name'=>'Footer',
+        'id'=> 'sidebar-3',
 		'before_widget' => '<div class="widget-area widget-footer"><ul>',
 		'after_widget' => '</ul></div>',
 		'before_title' => '<h4>',
@@ -31,6 +34,7 @@
 	// The Alert Widget
 	// Location: displayed on the top of the home page, right after the header, right before the loop, within the content area
 	register_sidebar(array('name'=>'Alert',
+        'id'=> 'sidebar-4',
 		'before_widget' => '<div class="widget-area widget-alert"><ul>',
 		'after_widget' => '</ul></div>',
 		'before_title' => '<h4>',
@@ -63,7 +67,7 @@
 	}
 
 	// custom background support
-	add_custom_background();
+	//add_custom_background();
 
 	// custom header image support
 	define('NO_HEADER_TEXT', true );
@@ -79,7 +83,7 @@
 	        }
 	    </style><?php
 	}
-	add_custom_image_header( '', 'admin_header_style' );
+	//add_custom_image_header( '', 'admin_header_style' );
 
 	// adds Post Format support
 	// learn more: http://codex.wordpress.org/Post_Formats
@@ -124,7 +128,7 @@
 	add_filter('excerpt_more', 'custom_excerpt_more');
 	// no more jumping for read more link
 	function no_more_jumping($post) {
-		return '<a href="'.get_permalink($post->ID).'" class="read-more">'.'...&nbsp; 閱讀全文 &raquo;'.'</a>';
+		return '<a href="'.get_permalink().'" class="read-more">'.'...&nbsp; 閱讀全文 &raquo;'.'</a>';
 	}
 	add_filter('excerpt_more', 'no_more_jumping');
 	
