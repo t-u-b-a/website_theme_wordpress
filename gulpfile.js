@@ -7,7 +7,7 @@ var config = {
 //    output: './dist',
     output: '/Applications/MAMP/htdocs/tuba/wp-content/themes/tuba',
     pluginsOutput: '/Applications/MAMP/htdocs/tuba/wp-content/plugins',
-    less: ['normalize.less', 'main.less'],
+    less: ['normalize.less', 'pta-style.css', 'main.less'],
     js: ['tuba.js'],
     tasks: ['init', 'images', 'css', 'js', 'favicon', 'html', 'plugin']
 };
