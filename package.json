@@ -10,7 +10,8 @@
     "keywords": [],
     "main": "server.js",
     "scripts": {
-        "build": "gulp build"
+        "build": "gulp build",
+        "css": "gulp css"
     },
     "dependencies": {
         "gulp": "3.8.10",
