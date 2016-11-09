@@ -722,6 +722,7 @@ class PTA_SUS_Public {
 		                    if($remaining > 0) {
                                 // azai: 不要顯示多少人已報名
 //			                    $filled_text = apply_filters( 'pta_sus_public_output', sprintf(__('%d Filled', 'pta_volunteer_sus'),(int)$filled ), 'task_number_spots_filled_message', (int)$filled );
+                                $filled_text = '';
 		                    } else {
 			                    $filled_text = apply_filters('pta_sus_public_output', __('Filled', 'pta_volunteer_sus'), 'task_spots_full_message');
 		                    }
