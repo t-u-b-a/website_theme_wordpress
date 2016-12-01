@@ -244,7 +244,7 @@ class PTA_SUS_Admin {
 									<td>'.(($i === 1) ? esc_html($task->title) : '' ).'</td>
 									<td>'.(("" == $task->time_start) ? __("N/A", 'pta_volunteer_sus') : date_i18n(get_option("time_format"), strtotime($task->time_start)) ).'</td>
 									<td>'.(("" == $task->time_end) ? __("N/A", 'pta_volunteer_sus') : date_i18n(get_option("time_format"), strtotime($task->time_end)) ).'</td>
-									<td>#'.$i.': <em>'.esc_html($signup->firstname).' '.esc_html($signup->lastname).'</em>
+									<td>#'.$i.': <em>'.esc_html($signup->lastname).' '.esc_html($signup->firstname).'</em>
 									<td>'.esc_html($signup->email).'</td>
 									<td>'.esc_html($signup->phone).'</td>
 									<td>'.esc_html($signup->item).'</td>
