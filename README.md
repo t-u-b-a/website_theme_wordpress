@@ -49,3 +49,14 @@ Wordpress Settings:
 6. 編輯 event calendar 中文的方法
     - 編輯 lang/the-events-calendar-zh_TW.po
     - 在OS X上, 用Poedit輸出mo檔, 放回同一個資料夾
+
+7. Plugins
+
+    - the-events-calendar
+    - recent-posts-by-category-widget
+    - pta-volunteer-sign-up-sheets
+    - postman-smtp
+    - list-category-posts
+    - debug-bar
+    - custom-permalinks
+    - always-edit-in-html
