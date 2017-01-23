@@ -726,15 +726,16 @@ class PTA_SUS_Public {
 		                    } else {
 			                    $filled_text = apply_filters('pta_sus_public_output', __('Filled', 'pta_volunteer_sus'), 'task_spots_full_message');
 		                    }
-
-		                    $remaining_text = apply_filters( 'pta_sus_public_output', sprintf(__('%d remaining: &nbsp;', 'pta_volunteer_sus'), (int)$remaining), 'task_number_remaining', (int)$remaining );
+                            // azai: 也不要顯示剩多少名額
+		                    //$remaining_text = apply_filters( 'pta_sus_public_output', sprintf(__('%d remaining: &nbsp;', 'pta_volunteer_sus'), (int)$remaining), 'task_number_remaining', (int)$remaining );
 		                    $separator = apply_filters('pta_sus_public_output', '', 'task_spots_filled_remaining_separator');
 
 
 		                    $return .= '<td class="column-consolidated">'.esc_html($filled_text);
 		                    if($remaining > 0) {
 		                    	if(false == $this->main_options['login_required_signup'] || is_user_logged_in()) {
-				                    $return .= esc_html($separator . $remaining_text).'<a href="'.esc_url($task_url).'">'.apply_filters( 'pta_sus_public_output', __('Sign up &raquo;', 'pta_volunteer_sus'), 'task_sign_up_link_text' ) . '</a>';
+				                    //$return .= esc_html($separator . $remaining_text).'<a href="'.esc_url($task_url).'">'.apply_filters( 'pta_sus_public_output', __('Sign up &raquo;', 'pta_volunteer_sus'), 'task_sign_up_link_text' ) . '</a>';
+                                    $return .= '<a href="'.esc_url($task_url).'">'.apply_filters( 'pta_sus_public_output', __('Sign up &raquo;', 'pta_volunteer_sus'), 'task_sign_up_link_text' ) . '</a>';
 			                    } else {
 				                    $return .= ' - ' . esc_html($this->main_options['login_signup_message']);
 			                    }
